@@ -1,0 +1,145 @@
+:root {
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --accent: #00458e;
+    --bg: #ffffff;
+    --line: #f3f4f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 4rem 1.5rem;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.profile-img:hover {
+    filter: grayscale(0%);
+}
+
+.header-content h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.header-content p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.header-content a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid var(--line);
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.5rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.row-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding-top: 0.2rem;
+}
+
+.row-content strong {
+    display: block;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.row-content span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.row-content a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.extra-info {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.cert-list {
+    list-style: none;
+}
+
+.cert-item {
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.cert-name {
+    font-weight: 500;
+}
+
+.cert-org {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+    body { padding: 2rem 1rem; }
+    header { flex-direction: column; text-align: center; }
+}
