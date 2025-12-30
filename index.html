@@ -1,174 +1,336 @@
 <!DOCTYPE html>
-
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title> Sonmez' s Personel Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sönmez İSAK | Personel Site</title>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        .rev{
-            font-family: "Protest Revolution", sans-serif;
+        :root {
+            --primary-color: #00458e; /* Turkcell mavisine yakın profesyonel bir ton */
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-body: #f9fafb;
+            --bg-card: #ffffff;
+            --accent: #fbbf24;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border-left: 8px solid var(--primary-color);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--border);
+        }
+
+        .header-content h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content h4 {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .header-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Card System */
+        .section-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        /* List Items Styling */
+        .item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-logo {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+
+        .item-logo img {
+            max-width: 32px;
+            height: auto;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-meta {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-subtitle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Certifications Grid */
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-item {
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .cert-org {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            display: block;
+            margin: 0.2rem 0;
+        }
+
+        .cert-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .item-logo {
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
-    
 </head>
 <body>
-    <table cellspacing="20">
-        <tr>
-            <td><img src="images/profil_photo_resized.png" alt="sonmez isak profile picture"></td>
-            <td>    
-                <h1 class="rev">Sönmez İSAK , M.S.c - M.B.A</h1>
-                <h4 class="rev"><em>Core Network Operations Manager at <a target="_blank" href="https://www.turkcell.com.tr/">TURKCELL</a> </em></h4>
-            </td>
-        </tr>
-    </table>
 
-    <hr>
-    <h3>Experience</h3>
-    <table cellspacing="5">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Dates</th>
-                <th>Company</th>
-                <th>Title</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th><img src="./images/turkcell-logo.webp" alt="turkcell" width="30"></th>
-                <td>2019 - Present</td>
-                <td>Turkcell</td>
-                <td>Core Network Operations Manager</td>
-            </tr>
-            <tr>
-                <th><img src="./images/turkcell-logo.webp" alt="turkcell" width="30"></th>
-                <td>2017 - 2019</td>
-                <td>Turkcell</td>
-                <td>Radio Control Systems Manager</td>
-            </tr>
-            <tr>
-                <th><img src="./images/turkcell-logo.webp" alt="turkcell" width="30"></th>
-                <td>2008 - 2017</td>
-                <td>Turkcell</td>
-                <td>Expert BSS&RNS Engineer</td>
-            </tr>
-        </tbody>
-        <tfoot>
+<div class="container">
+    <header>
+        <img src="images/profil_photo_resized.png" alt="Sönmez İSAK Profile" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
+        <div class="header-content">
+            <h1>Sönmez İSAK, M.S.c - M.B.A</h1>
+            <h4>Core Network Operations Manager at <a target="_blank" href="https://www.turkcell.com.tr/">TURKCELL</a></h4>
+        </div>
+    </header>
 
-        </tfoot>
-    </table>
-    
-    <hr>
-    <h3>Education</h3>
-    <table cellspacing="5">
-        <thead>
-            <th></th>
-            <th>Dates</th>
-            <th>University</th>
-            <th>Faculty</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="./images/ytu.png" alt="ytü" width="30"></td>
-                <td>2022 - 2023</td>
-                <td>Yildiz Technical University</td>
-                <td><a target="_blank" href="https://sbe.yildiz.edu.tr/sayfa/Programlar-%3e-Tezsiz-Y%c3%bcksek-Lisans-Programlar%c4%b1/%c4%b0%c5%9fletme-Y%c3%b6netimi-Tezsiz-Y%c3%bcksek-Lisans-Program%c4%b1/349"> Master of Business Administration (M.B.A)</a></td>
-            </tr>        
-            <tr>
-                <td><img src="./images/ytu.png" alt="ytü" width="30"></td>
-                <td>2003 - 2007</td>
-                <td>Yildiz Technical University</td>
-                <td><a target="_blank" href="https://ehm.yildiz.edu.tr/">Master of Science (M.Sc.), Telecommunications Engineering</a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>You can view my master thesis <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id=kZLXL8A2-LPBwgj5lYV8Sw&no=K3TZlq6Bic7u-Yy4tS6aKg">RF telecommunication application in compliance with IEEE 802.15.4 standart</a></td>
-            </tr>
-            <tr>
-                <td><img src="./images/iu.png" alt="iü" width="30"></td>
-                <td>1998 - 2002</td>
-                <td>Istanbul University</td>
-                <td><a target="_blank" href="https://elektrikelektronikmuhendislik.iuc.edu.tr/tr/_">Bachelor of Science (B.Sc.), Electrical and Electronics Engineering</a></td>
-            </tr>                        
-        </tbody>
-    </table>
-    
-    <hr>
-    <h3>Licenses & Certifications</h3>
-    <table cellspacing="3">
-        <thead>
-            <th>Issuing organization</th>
-            <th>Issue date</th>
-            <th>Name</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Academy Club</td>
-                <td>2025</td>
-                <td>Yapay Zeka Uygulamaları: Langchain, RAG, LLM Orkestrasyonu</td>
-            </tr>             
-            <tr>
-                <td>Linkedin Learning</td>
-                <td>2025</td>
-                <td>Agentic AI Fundamentals: Architectures, Frameworks, and Applications</td>
-            </tr>     
-            <tr>
-                <td>Apis Training</td>
-                <td>2025</td>
-                <td>5G Core Network Architecture</td>
-            </tr>              
-            <tr>
-                <td>Boğaziçi Üniversitesi - Yaşam Boyu Eğitim Merkezi</td>
-                <td>2024</td>
-                <td>Turkcell DigiT Masters Programı</td>
-            </tr>            
-            <tr>
-                <td>Sum Koçluk Eğitim Danışmanlık A.Ş</td>
-                <td>2022</td>
-                <td>Recognised Leader As Coach</td>
-            </tr>
-            <tr>
-                <td>Udacity</td>
-                <td>2021</td>
-                <td>AI Programming with Python</td>
-            </tr>
-            <tr>
-                <td>Udemy</td>
-                <td>2020</td>
-                <td>Sıfırdan İleri Seviye Programlama (2020) Python</td>
-            </tr>
-            <tr>
-                <td>Udemy</td>
-                <td>2020</td>
-                <td>Data Science and Machine Learning</td>
-            </tr>
-            <tr>
-                <td>Koç University</td>
-                <td>2019</td>
-                <td>Leading Leaders</td>
-            </tr>
-            <tr>
-                <td>Udacity</td>
-                <td>2018</td>
-                <td>Intro to Programming Nanodegree</td>
-            </tr>   
-            <tr>
-                <td>Koç University</td>
-                <td>2018</td>
-                <td>Building Leaders Mini MBA</td>
-            </tr>                                                          
-        </tbody>
-    </table>
+    <!-- Deneyim Bölümü -->
+    <section class="section-card">
+        <h3>İş Deneyimi</h3>
+        
+        <div class="item">
+            <div class="item-logo">
+                <img src="./images/turkcell-logo.webp" alt="Turkcell" onerror="this.parentElement.innerHTML='TC'">
+            </div>
+            <div class="item-details">
+                <span class="item-meta">2019 - Günümüz</span>
+                <div class="item-title">Core Network Operations Manager</div>
+                <div class="item-subtitle">Turkcell</div>
+            </div>
+        </div>
 
-</body>
-</html>
+        <div class="item">
+            <div class="item-logo">
+                <img src="./images/turkcell-logo.webp" alt="Turkcell" onerror="this.parentElement.innerHTML='TC'">
+            </div>
+            <div class="item-details">
+                <span class="item-meta">2017 - 2019</span>
+                <div class="item-title">Radio Control Systems Manager</div>
+                <div class="item-subtitle">Turkcell</div>
+            </div>
+        </div>
 
+        <div class="item">
+            <div class="item-logo">
+                <img src="./images/turkcell-logo.webp" alt="Turkcell" onerror="this.parentElement.innerHTML='TC'">
+            </div>
+            <div class="item-details">
+                <span class="item-meta">2008 - 2017</span>
+                <div class="item-title">Expert BSS & RNS Engineer</div>
+                <div class="item-subtitle">Turkcell</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eğitim Bölümü -->
+    <section class="section-card">
+        <h3>Eğitim</h3>
+        
+        <div class="item">
+            <div class="item-logo">
+                <img src="./images/ytu.png" alt="YTÜ" onerror="this.parentElement.innerHTML='YTÜ'">
+            </div>
+            <div class="item-details">
+                <span class="item-meta">2022 - 2023</span>
+                <div class="item-title">Master of Business Administration (M.B.A)</div>
+                <div class="item-subtitle">Yıldız Teknik Üniversitesi</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-logo">
+                <img src="./images/ytu.png" alt="YTÜ" onerror="this.parentElement.innerHTML='YTÜ'">
+            </div>
+            <div class="item-details">
+                <span class="item-meta">2003 - 2007</span>
+                <div class="item-title">Master of Science (M.Sc.), Telecommunications Engineering</div>
+                <div class="item-subtitle">Yıldız Teknik Üniversitesi</div>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                    Tez: <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id=kZLXL8A2-LPBwgj5lYV8Sw&no=K3TZlq6Bic7u-Yy4tS6aKg" target="_blank">RF telecommunication application in compliance with IEEE 802.15.4 standart</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-logo">
+                <img src="./images/iu.png" alt="İÜ" onerror="this.parentElement.innerHTML='İÜ'">
+            </div>
+            <div class="item-details">
+                <span class="item-meta">1998 - 2002</span>
+                <div class="item-title">Bachelor of Science (B.Sc.), Electrical and Electronics Engineering</div>
+                <div class="item-subtitle">İstanbul Üniversitesi</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sertifikalar -->
+    <section class="section-card">
+        <h3>Lisanslar ve Sertifikalar</h3>
+        <div class="cert-list">
+            <div class="cert-item">
+                <span class="cert-org">Academy Club</span>
+                <span class="cert-name">Yapay Zeka Uygulamaları: Langchain, RAG, LLM Orkestrasyonu</span>
+                <span class="cert-date">2025</span>
+            </div>
+            <div class="cert-item">
+                <span class="cert-org">LinkedIn Learning</span>
+                <span class="cert-name">Agentic AI Fundamentals</span>
+                <span class="cert-date">2025</span>
+            </div>
+            <div class="cert-item">
+                <span class="cert-org">Apis Training</span>
+                <span class="cert-name">5G Core Network Architecture</span>
+                <span class="cert-date">2025</span>
+            </div>
+            <div class="cert-item">
+                <span class="cert-org">Boğaziçi Üniversitesi</span>
+                <span class="cert-name">Turkcell DigiT Masters Programı</span>
+                <span class="cert-date">2024</span>
+            </div>
+            <div class="cert-item">
+                <span class="cert-org">Udacity</span>
+                <span class="cert-name">AI Programming with Python</span>
+                <span class="cert-date">2021</span>
+            </div>
+            <div class="cert-item">
+                <span class="cert-org">Koç University</span>
+                <span class="cert-name">Building Leaders Mini MBA</span>
+                <span class="cert-date">2018</span>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light); text-align: center;">... ve diğer profesyonel gelişim sertifikaları.</p>
+    </section>
+</div>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-66D3TY668P"></script>
@@ -176,7 +338,8 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-66D3TY668P');
 </script>
 
+</body>
+</html>
