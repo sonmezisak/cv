@@ -5,179 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sönmez İSAK | Personel Site</title>
     
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
 
-    <style>
-        :root {
-            --text-main: #111827;
-            --text-muted: #6b7280;
-            --accent: #00458e;
-            --bg: #ffffff;
-            --line: #f3f4f6;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.5;
-            padding: 4rem 1.5rem;
-        }
-
-        .container {
-            max-width: 700px; /* Daha dar, daha odaklanmış bir görünüm */
-            margin: 0 auto;
-        }
-
-        /* Minimalist Header */
-        header {
-            margin-bottom: 4rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .profile-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            filter: grayscale(100%); /* Minimalist dokunuş */
-            transition: filter 0.3s ease;
-        }
-
-        .profile-img:hover {
-            filter: grayscale(0%);
-        }
-
-        .header-content h1 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .header-content p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .header-content a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px solid var(--line);
-        }
-
-        /* Section Titles */
-        section {
-            margin-bottom: 3rem;
-        }
-
-        h3 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--line);
-            padding-bottom: 0.5rem;
-        }
-
-        /* Data Rows */
-        .row {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .row-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            padding-top: 0.2rem;
-        }
-
-        .row-content strong {
-            display: block;
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
-        .row-content span {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .row-content a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        /* Thesis & Extra info */
-        .extra-info {
-            margin-top: 0.4rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* Certifications - Clean list */
-        .cert-list {
-            list-style: none;
-        }
-
-        .cert-item {
-            margin-bottom: 0.75rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 1rem;
-        }
-
-        .cert-name {
-            font-weight: 500;
-        }
-
-        .cert-org {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            flex-shrink: 0;
-        }
-
-        @media (max-width: 600px) {
-            .row {
-                grid-template-columns: 1fr;
-                gap: 0.25rem;
-            }
-            body { padding: 2rem 1rem; }
-            header { flex-direction: column; text-align: center; }
-        }
-    </style>
+    <!-- CSS Dosyamızı Bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
     <header>
-        <img src="images/profil_photo_resized.png" alt="Sönmez İSAK" class="profile-img" onerror="this.src='https://via.placeholder.com/80'">
+        <img src="images/profil_photo_resized.png" alt="Sönmez İSAK" class="profile-img" onerror="this.src='[https://via.placeholder.com/80](https://via.placeholder.com/80)'">
         <div class="header-content">
             <h1>Sönmez İSAK</h1>
-            <p>Core Network Operations Manager at <a target="_blank" href="https://www.turkcell.com.tr/">TURKCELL</a></p>
+            <p>Core Network Operations Manager at <a target="_blank" href="[https://www.turkcell.com.tr/](https://www.turkcell.com.tr/)">TURKCELL</a></p>
         </div>
     </header>
 
     <section>
         <h3>Deneyim</h3>
         <div class="row">
-            <div class="row-date">2019 — Now</div>
+            <div class="row-date">2019 — Günümüz</div>
             <div class="row-content">
                 <strong>Core Network Operations Manager</strong>
                 <span>Turkcell</span>
@@ -213,7 +63,7 @@
             <div class="row-content">
                 <strong>M.Sc. Telecommunications Engineering</strong>
                 <span>Yıldız Teknik Üniversitesi</span>
-                <p class="extra-info">Thesis: <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id=kZLXL8A2-LPBwgj5lYV8Sw&no=K3TZlq6Bic7u-Yy4tS6aKg" target="_blank">RF telecommunication application (IEEE 802.15.4)</a></p>
+                <p class="extra-info">Tez: <a href="[https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id=kZLXL8A2-LPBwgj5lYV8Sw&no=K3TZlq6Bic7u-Yy4tS6aKg](https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id=kZLXL8A2-LPBwgj5lYV8Sw&no=K3TZlq6Bic7u-Yy4tS6aKg)" target="_blank">RF telecommunication application (IEEE 802.15.4)</a></p>
             </div>
         </div>
         <div class="row">
@@ -242,15 +92,6 @@
         </ul>
     </section>
 </div>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-66D3TY668P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-66D3TY668P');
-</script>
 
 </body>
 </html>
